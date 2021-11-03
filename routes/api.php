@@ -25,12 +25,20 @@ Route::prefix('v1')->group(function ($router) {
     //public route
     Route::prefix('admin')->group(function () {
         
-        Route::post('Register', [AuthController::class,"register"])->name("register");
+        Route::post('register', [AuthController::class,"register"])->name("register");
         Route::post('login', [AuthController::class,"login"])->name("login");
         //refresh token
         Route::post('refresh', [AuthController::class,"refresh"])->name("refresh");
 
 
+    });
+
+       // Routes available only for the authenticated users.
+       Route::group(["middleware" => "auth:api", "prefix" => "admin"], function(){
+        // logout user from application
+        Route::post('logout', [AuthController::class,"logout"])->name("logout");
+        // get user info
+        Route::get("user", [AuthController::class,"user"])->name("user");
     });
     
 });
