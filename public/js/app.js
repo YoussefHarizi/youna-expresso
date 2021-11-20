@@ -2150,15 +2150,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -2170,8 +2161,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       form: new vform__WEBPACK_IMPORTED_MODULE_1__.Form({
-        email: '',
-        password: '',
+        email: "",
+        password: "",
         remember: false
       })
     };
@@ -2187,7 +2178,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.form.post('/api/v1/admin/login');
+                return _this.form.post("/api/v1/admin/login");
 
               case 2:
                 response = _context.sent;
@@ -4857,52 +4848,47 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", {
-      staticClass: "w-full h-screen md:-mx-4",
-      staticStyle: {
-        filter: "blur(6px)",
-        "background-image": "url('/images/bg1.jpg')",
-      },
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "absolute w-3/5 bg-white",
-        staticStyle: {
-          transform: "translate(-50%, -50%)",
-          top: "50%",
-          left: "50%",
-        },
-      },
-      [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            on: {
-              submit: function ($event) {
-                $event.preventDefault()
-                return _vm.login.apply(null, arguments)
-              },
-              keydown: function ($event) {
-                return _vm.form.onKeydown($event)
+  return _c(
+    "div",
+    {
+      staticClass: "flex items-center justify-center min-h-screen bg-gray-100",
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "px-8 py-6 mt-4 text-left bg-white shadow-lg" },
+        [
+          _c("h3", { staticClass: "text-2xl font-bold text-center" }, [
+            _vm._v("Login to your account"),
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              attrs: { method: "POST" },
+              on: {
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.login.apply(null, arguments)
+                },
+                keydown: function ($event) {
+                  return _vm.form.onKeydown($event)
+                },
               },
             },
-          },
-          [
-            _c("div", { staticClass: "px-12 py-10" }, [
-              _c("div", { staticClass: "w-full mb-2" }, [
-                _c(
-                  "div",
-                  { staticClass: "flex items-center" },
-                  [
-                    _c("i", {
-                      staticClass:
-                        "ml-3 fill-current text-gray-400 text-xs z-10 far fa-user",
-                    }),
+            [
+              _c("AlertError", { attrs: { form: _vm.form } }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4" },
+                [
+                  _c("div", [
+                    _c(
+                      "label",
+                      { staticClass: "block", attrs: { for: "email" } },
+                      [_vm._v("Email")]
+                    ),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -4914,12 +4900,8 @@ var render = function () {
                         },
                       ],
                       staticClass:
-                        "-mx-6 px-8  w-full border rounded px-3 py-1 text-gray-700",
-                      attrs: {
-                        type: "email",
-                        name: "email",
-                        placeholder: "email",
-                      },
+                        "w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600",
+                      attrs: { type: "text", placeholder: "Email" },
                       domProps: { value: _vm.form.email },
                       on: {
                         input: function ($event) {
@@ -4930,24 +4912,12 @@ var render = function () {
                         },
                       },
                     }),
-                    _vm._v(" "),
-                    _c("HasError", {
-                      attrs: { form: _vm.form, field: "email" },
-                    }),
-                  ],
-                  1
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "w-full mb-2" }, [
-                _c(
-                  "div",
-                  { staticClass: "flex items-center" },
-                  [
-                    _c("i", {
-                      staticClass:
-                        "ml-3 fill-current text-gray-400 text-xs z-10 fas fa-lock",
-                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("HasError", { attrs: { form: _vm.form, field: "email" } }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-4" }, [
+                    _c("label", { staticClass: "block" }, [_vm._v("Password")]),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -4959,12 +4929,8 @@ var render = function () {
                         },
                       ],
                       staticClass:
-                        "-mx-6 px-8 w-full border rounded px-3 py-1 text-gray-700",
-                      attrs: {
-                        type: "password",
-                        name: "password",
-                        placeholder: "password",
-                      },
+                        "w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600",
+                      attrs: { type: "password", placeholder: "Password" },
                       domProps: { value: _vm.form.password },
                       on: {
                         input: function ($event) {
@@ -4975,59 +4941,48 @@ var render = function () {
                         },
                       },
                     }),
-                    _vm._v(" "),
-                    _c("HasError", {
-                      attrs: { form: _vm.form, field: "password" },
-                    }),
-                  ],
-                  1
-                ),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "mt-8 flex justify-between" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "bg-yellow-400 text-xs text-gray-700 rounded px-4 py-2",
-                      attrs: { type: "submit", disabled: _vm.form.busy },
-                    },
-                    [_vm._v("SIGN IN")]
-                  ),
-                ]),
-              ]),
-            ]),
-          ]
-        ),
-      ]
-    ),
-  ])
+                  ]),
+                  _vm._v(" "),
+                  _c("HasError", {
+                    attrs: { form: _vm.form, field: "password" },
+                  }),
+                  _vm._v(" "),
+                  _vm._m(0),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ]
+      ),
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center -mt-10" }, [
-      _c("img", {
-        staticClass: "border-2 w-20 h-20 rounded-full",
-        attrs: { src: "/images/ys.jpg" },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex items-center" }, [
-      _c("input", { staticClass: "w-4 h-4 mr-2", attrs: { type: "checkbox" } }),
+    return _c("div", { staticClass: "flex items-baseline justify-between" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900",
+          attrs: { type: "submit" },
+        },
+        [_vm._v("Login")]
+      ),
       _vm._v(" "),
-      _c("span", { staticClass: "text-xs text-gray-700" }, [
-        _vm._v("Remember Me"),
-      ]),
+      _c(
+        "a",
+        {
+          staticClass: "text-sm text-blue-600 hover:underline",
+          attrs: { href: "#" },
+        },
+        [_vm._v("Forgot password?")]
+      ),
     ])
   },
 ]
