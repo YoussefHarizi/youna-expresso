@@ -18,7 +18,7 @@ const getters={
     token:state=>state.token,
     authError:state=>state.auth_err,
     check:state=>state.isLogged,
-    isLoading:state=>satate.isLoading
+    isLoading:state=>state.loading
 }
 
 //muatations
@@ -26,7 +26,7 @@ const mutations={
     [types.LOGIN](state){
         state.loading=true;
         state.auth_err=null,
-        satate.isLogged=false;
+        state.isLogged=false;
     },
     [types.LOGIN_SUCCESS](state,{token,remember}){
         state.loading=false;
@@ -60,6 +60,17 @@ const mutations={
 
 //actions
 const actions={
+    login({commit}) {
+        commit(types.LOGIN);
+    },
+    async fetchUser({commit}) {
+        try {
+            const { data } = await axios.get('/api/v1/auth/user')
+            commit(types.FETCH_USER_SUCCESS, {user: data} )
+        } catch (error) {
+            commit(types.FETCH_USER_FAILURE)
+        }
+    }
 
 }
 

@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "js-cookie": "^3.0.1",
-        "vform": "^2.1.2"
+        "vform": "^2.1.2",
+        "vue-spinner": "^1.0.4"
     }
 }
